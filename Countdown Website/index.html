@@ -7,14 +7,14 @@ body, html {
 }
 
 .bgimg {
-    background-image: url('https://commons.wikimedia.org/wiki/File%3APrinceton_University_Chapel_2003.jpg');
+    background-image: "Princeton_University_Chapel_2003.jpg");
     height: 100%;
     background-position: center;
     background-size: cover;
     position: relative;
     color: black;
     font-family: "Courier New", Courier, monospace;
-    font-size: 40px;
+    font-size: 25px;
 }
 
 .topleft {
@@ -42,12 +42,18 @@ hr {
     width: 40%;
 }
 </style>
-<body>
 
+<div class="bgimg">
+  <div class="topleft">
+    <p></p>
+  </div>
   <div class="middle">
-    <h1>#PrinceEds2NewlyWeds</h1>
+    <h1><a href="http://meredithandkevin.us/">#PrinceEds2NewlyWeds</a></h1>
     <hr>
-    <p id="demo" style="font-size:50px"></p>
+    <p id="demo" style="font-size:40px"></p>
+  </div>
+  <div class="bottomleft">
+    <p></p>
   </div>
 </div>
 
@@ -77,7 +83,7 @@ var countdownfunction = setInterval(function() {
     // If the count down is over, write some text 
     if (distance < 0) {
         clearInterval(countdownfunction);
-        document.getElementById("demo").innerHTML = "EXPIRED";
+        document.getElementById("demo").innerHTML = "WEDDING TIME!";
     }
 }, 1000);
 </script>
