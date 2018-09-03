@@ -2,14 +2,7 @@
 *.ckpt
 *.old
 *.pyc
-.DS_Store
-.ipynb_checkpoints
+*.DS_Store
+*.ipynb_checkpoints
 checkpoint
 logs/*
-tf_logs/*
-handson-ml/images/**/*.png
-handson-ml/images/**/*.dot
-handson-ml/*.pyc
-handson-ml/*.ipynb_checkpoints
-handson-ml/.DS_Store
-handson-ml/.ipynb_checkpoints
