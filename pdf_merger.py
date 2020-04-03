@@ -17,7 +17,7 @@ def mergefiles(target_directory):
     merger = PdfFileMerger()
     for filename in filenames:
         print(filename)
-        merger.append(PdfFileReader(open(filename, 'rb')))
+        merger.append(PdfFileReader(open(filename, "rb")))
     merger.write("document-output.pdf")
     print("All files successfully merged!")
 
@@ -28,5 +28,5 @@ def main():
     mergefiles(target_directory)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

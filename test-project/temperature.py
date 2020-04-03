@@ -1,4 +1,5 @@
 import sys
+
 print(sys.executable)
 print(sys.version)
 
@@ -23,7 +24,7 @@ class Celsius:
     temperature = property(get_temperature, set_temperature)
 
 
-man=Celsius()
-man.temperature=37
+man = Celsius()
+man.temperature = 37
 print(man.temperature)
 print(man.to_fahrenheit())

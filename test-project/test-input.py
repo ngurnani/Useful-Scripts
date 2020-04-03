@@ -6,5 +6,5 @@ def main():
     print(target_directory)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

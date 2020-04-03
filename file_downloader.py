@@ -18,15 +18,16 @@ def get_file_links(ftype, archive_url):
     r = requests.get(archive_url)
 
     # create beautiful-soup object
-    soup = BeautifulSoup(r.content, 'html5lib')
+    soup = BeautifulSoup(r.content, "html5lib")
 
     # find all links on web-page
-    links = soup.findAll('a')
+    links = soup.findAll("a")
 
     # filter the link sending with file type
     # specified by ftype (i.e. .pdf, .mp4 etc.)
-    file_links = [archive_url + link['href']
-                  for link in links if link['href'].endswith(ftype)]
+    file_links = [
+        archive_url + link["href"] for link in links if link["href"].endswith(ftype)
+    ]
 
     return file_links
 
@@ -35,12 +36,12 @@ def download_files(file_links):
 
     for link in file_links:
 
-        '''iterate through all links in file_links
-        and download them one by one'''
+        """iterate through all links in file_links
+        and download them one by one"""
 
         # obtain filename by splitting url and getting
         # last string
-        file_name = link.split('/')[-1]
+        file_name = link.split("/")[-1]
 
         print("Downloading file:%s" % file_name)
 
@@ -48,8 +49,8 @@ def download_files(file_links):
         r = requests.get(link, stream=True)
 
         # download started
-        with open(file_name, 'wb') as f:
-            for chunk in r.iter_content(chunk_size=1024*1024):
+        with open(file_name, "wb") as f:
+            for chunk in r.iter_content(chunk_size=1024 * 1024):
                 if chunk:
                     f.write(chunk)
 
@@ -69,5 +70,5 @@ def main():
     download_files(file_links)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
